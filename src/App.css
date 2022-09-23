@@ -166,9 +166,25 @@ ul {
 /* End Of Global Styles */
 
 /* Search */
-/* Favorites */
-/* Meals */
+.search-container{
+  height: 5rem;
+  background:var(--white);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
+.search-container form{
+  width: var(--view-width);
+  max-width:var(--max-width);
+  display:flex;
+  gap:0.5rem;
+  flex-wrap:wrap;
+}
+
+/* Favorites */
+
+/* Meals */
 .section{
   padding:3rem 0;
   width: var(--view-width);
