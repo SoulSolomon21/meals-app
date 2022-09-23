@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import axios from 'axios';
 
 const AppContext = React.createContext()
-const allMealsUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=a'
+const allMealsUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=chocolate'
 const randomMealUrl = 'https://www.themealdb.com/api/json/v1/1/random.php'
 
 const AppProvider = ({children}) => {
@@ -13,7 +13,13 @@ const AppProvider = ({children}) => {
       setLoading(true)
       try {
         const {data} = await axios(url)
+        if(data.meals){
         setMeals(data.meals)
+        }else{
+        setMeals([])
+          
+        }
+        
         
       } catch (e) {
         console.log(e.response)
