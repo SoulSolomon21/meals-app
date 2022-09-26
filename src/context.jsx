@@ -20,7 +20,6 @@ const AppProvider = ({children}) => {
         const {data} = await axios(url)
         if(data.meals){
         setMeals(data.meals)
-          console.log(data)
         }else{
         setMeals([])
           
@@ -31,7 +30,12 @@ const AppProvider = ({children}) => {
       }
       setLoading(false)
       }
-    
+
+  useEffect(() => {
+    if(!searchTerm)
+    fetchMeals(allMealsUrl)
+  },[])
+  
   useEffect(() => {
     fetchMeals(`${allMealsUrl}${searchTerm}`)
   },[searchTerm])
