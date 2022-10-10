@@ -230,6 +230,22 @@ ul {
   cursor:pointer;
 }
 
+.remove-btn{
+  margin-top:0.25rem;
+  background:transparent;
+  border:transparent;
+  color:var(--white);
+  cursor:pointer;
+  font-size:0.5rem;
+  transition:var(--transition);
+}
+
+.remove-btn:hover{
+  color:var(--red-dark);
+  
+}
+
+
 /* Meals */
 .section{
   padding:3rem 0;
